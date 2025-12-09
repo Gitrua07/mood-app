@@ -13,7 +13,31 @@ A full-stack web application which tracks the user's daily moods.
 * Data persistence
 
 ## Setup Instructions
-(Will add as I build)
+
+**Install dependencies:**
+```bash
+
+# Client
+cd client
+npm install
+
+# Server
+cd ../server
+npm install
+```
+
+## Running the Application
+**Terminal 1 - Backend:**
+```bash
+cd server
+npm run dev
+```
+
+**Terminal 2 - Frontend:**
+```bash
+cd client
+npm run dev
+```
 
 ## Project Status
 In development

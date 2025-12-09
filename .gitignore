@@ -1,0 +1,12 @@
+node_modules/
+package-lock.json
+.env
+.env.local
+client/dist/
+server/dist/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+server/data/*.json
+*.log
