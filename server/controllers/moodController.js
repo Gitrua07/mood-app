@@ -1,16 +1,9 @@
-import express from 'express'
 import {moods} from './data/data.js'
 
-const PORT = 8000
-
-const app = express()
-
-app.get('/api/:category/:type', (req, res)=>{
+export const moodController = (req, res) =>{
     const {category, type} = req.params
 
     let filteredData = moods.filter(mood => mood[category].toLowerCase() === type.toLowerCase())
     
     res.json(filteredData)
-})
-
-app.listen(PORT, () => console.log(`connected to port ${PORT}`))
+}
