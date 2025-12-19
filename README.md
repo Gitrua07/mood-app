@@ -41,3 +41,11 @@ npm run dev
 
 ## Project Status
 In development
+
+## Image Credits
+* plus button - <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by dmitri13 - Flaticon</a>
+* Arrow button - <a href="https://www.flaticon.com/free-icons/navigation" title="navigation icons">Navigation icons created by kowshal-kumar - Flaticon</a>
+* Cat Emojis:
+    * Angry: <a href="https://openmoji.org/library/emoji-1F63E/" title="pouting cat">pouting cat created by Emily Jäger - OpenMoji</a>
+    * Happy: <a href="https://openmoji.org/library/emoji-1F638/" title="grinning cat with smiling eyes">grinning cat with smiling eyes created by Emily Jäger - OpenMoji</a>
+    * Sad: <a href="https://openmoji.org/library/emoji-1F63F/" title="crying cat">crying cat created by Emily Jäger - OpenMoji</a>
