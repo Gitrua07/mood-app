@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Home from './Home'
 import Entries from './Entries'
-import './App.css'
+//import './App.css'
 
 function App() {
   return (
