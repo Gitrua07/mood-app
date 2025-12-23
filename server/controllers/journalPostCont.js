@@ -6,7 +6,8 @@ export const journalPostCont = async(req, res) => {
 
         const entry = {
             id: Date.now(),
-            entries: req.body.entries
+            entries: req.body.entries,
+            moodId: req.body.moodId
         }
 
         data.journals.push(entry)
