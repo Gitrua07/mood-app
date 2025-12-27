@@ -45,6 +45,9 @@ In development
 ## Image Credits
 * plus button - <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by dmitri13 - Flaticon</a>
 * Arrow button - <a href="https://www.flaticon.com/free-icons/navigation" title="navigation icons">Navigation icons created by kowshal-kumar - Flaticon</a>
+* back button - <a href="https://www.flaticon.com/free-icons/back-arrow" title="back arrow icons">Back arrow icons created by Ilham Fitrotul Hayat - Flaticon</a>
+* Home icon - <a href="https://www.flaticon.com/free-icons/home-button" title="home button icons">Home button icons created by bqlqn - Flaticon</a>
+* Entry icon - <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Tanah Basah - Flaticon</a>
 * Cat Emojis:
     * Angry: <a href="https://openmoji.org/library/emoji-1F63E/" title="pouting cat">pouting cat created by Emily Jäger - OpenMoji</a>
     * Happy: <a href="https://openmoji.org/library/emoji-1F638/" title="grinning cat with smiling eyes">grinning cat with smiling eyes created by Emily Jäger - OpenMoji</a>

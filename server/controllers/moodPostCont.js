@@ -5,7 +5,7 @@ export const moodPostCont = async(req,res) =>{
     const data = await readData('moods.json')
 
     const entry = {
-        "id": Date.now(),
+        "id": req.body.id,
         "mood": req.body.mood,
         "intensity": req.body.intensity,
         "date": new Date().toISOString(),
