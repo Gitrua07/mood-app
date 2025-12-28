@@ -10,56 +10,21 @@ import { Link } from 'react-router-dom'
 export default function MoodList(props){
     const [moods, setMoods] = useState([])
 
-    const tempMoods = [
-        {
-            id: Date.now(),
-            mood: "Angry",
-            intensity: "8",
-            date: new Date().toLocaleDateString(),
-            entries: "I got angry because a guy cut me off.",
-            createdAt: new Date().toISOString()
-        },
-        {
-            id: Date.now(),
-            mood: "Happy",
-            intensity: "2",
-            date: new Date().toLocaleDateString(),
-            entries: "I'm very happy because of so and so",
-            createdAt: new Date().toISOString()
-        },
-        {
-            id: Date.now(),
-            mood: "Sad",
-            intensity: "8",
-            date: new Date().toLocaleDateString(),
-            entries: "I got angry because a guy cut me off.",
-            createdAt: new Date().toISOString()
-        },
-        {
-            id: Date.now(),
-            mood: "Angry",
-            intensity: "8",
-            date: new Date().toLocaleDateString(),
-            entries: "I got angry because a guy cut me off.",
-            createdAt: new Date().toISOString()
-        }
-    ]
-
     useEffect(()=>{
         async function getMood(){
             const response = await fetch('http://localhost:8000/api/moods')
             const data = await response.json()
-            setMoods(data)
+            setMoods(data.moods)
         }
 
         getMood()
     },[])
-   
+    
     let tempSlice
     if (props.page){
-        tempSlice = tempMoods.slice(0,5)
+        tempSlice = moods.slice(0,5)
     }else{
-        tempSlice = tempMoods
+        tempSlice = moods
     }
    
 

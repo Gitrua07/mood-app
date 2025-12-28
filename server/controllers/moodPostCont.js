@@ -7,6 +7,7 @@ export const moodPostCont = async(req,res) =>{
     const entry = {
         "id": req.body.id,
         "mood": req.body.mood,
+        "entries": req.body.entries,
         "intensity": req.body.intensity,
         "date": new Date().toISOString(),
     }

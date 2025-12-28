@@ -16,14 +16,9 @@ export default function MoodInput() {
         const moodData = {
             "id": id,
             "mood": selectedMood,
+            "entries": entry,
             "intensity": intensity
         } 
-
-        const journalData = {
-            "entries": entry,
-            "moodId": id
-
-        }
 
         try{
             const data = await fetch('http://localhost:8000/api/moods', {
@@ -31,12 +26,8 @@ export default function MoodInput() {
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify(moodData)
             })
-    
-            const journalSubmit = await fetch('http://localhost:8000/api/journals', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(journalData)
-            })
+
+            console.log("JSON.stringify... =",JSON.stringify(moodData) )
 
             setEntry("")
             setIntensity(0)
