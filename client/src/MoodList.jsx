@@ -6,9 +6,14 @@ import Angry from './assets/angry-emoji.png'
 import Arrow from './assets/arrow.png'
 import Entries from './Entries'
 import { Link } from 'react-router-dom'
+import {WeeklyFilter, moodWeekFilter} from './WeekFilter'
+import { ChartNoAxesColumnDecreasing } from 'lucide-react'
 
 export default function MoodList(props){
     const [moods, setMoods] = useState([])
+    if (props.date){
+        
+    }
 
     useEffect(()=>{
         async function getMood(){
@@ -20,11 +25,29 @@ export default function MoodList(props){
         getMood()
     },[])
     
-    let tempSlice
+    let tempSlice0
     if (props.page){
-        tempSlice = moods.slice(0,5)
+        tempSlice0 = moods.slice(0,5)
     }else{
-        tempSlice = moods
+        tempSlice0 = moods
+    }
+
+    let tempSlice
+    if (props.date){
+        try{
+            const dateRange = WeeklyFilter(props.date)
+            console.log("PROPS=", props.date)
+            tempSlice = tempSlice0.filter(val =>{
+                console.log("DATE: ", val.date, dateRange.weekStart, dateRange.weekEnd)
+                return moodWeekFilter(val.date, dateRange.weekStart, dateRange.weekEnd)
+            })
+        }catch(err){
+            console.log("ERROR= ", err)
+        }
+        
+     
+    }else{
+        tempSlice = tempSlice0
     }
    
 
@@ -34,6 +57,11 @@ export default function MoodList(props){
                 <h1>Mood Entries</h1>
                 <Link to="/journal"><img className="w-15" src={Arrow}/></Link>
             </header>}
+
+            {tempSlice == 0 && <div className="py-100 px-200">
+                    <h1>No Moods Entered</h1>
+                </div>}
+
             {tempSlice.map(mood => {
                 let emo_src
                 if(mood.mood=="Happy"){
