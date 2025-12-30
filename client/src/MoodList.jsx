@@ -58,7 +58,7 @@ export default function MoodList(props){
                 <Link to="/journal"><img className="w-15" src={Arrow}/></Link>
             </header>}
 
-            {tempSlice == 0 && <div className="py-100 px-200">
+            {tempSlice == 0 && !props.page && <div className="py-100 px-200">
                     <h1>No Moods Entered</h1>
                 </div>}
 
