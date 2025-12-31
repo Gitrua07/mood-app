@@ -8,6 +8,7 @@ import Entries from './Entries'
 import { Link } from 'react-router-dom'
 import {WeeklyFilter, moodWeekFilter} from './WeekFilter'
 import { ChartNoAxesColumnDecreasing } from 'lucide-react'
+import Empty from './assets/sunrise.png'
 
 export default function MoodList(props){
     const [moods, setMoods] = useState([])
@@ -27,9 +28,9 @@ export default function MoodList(props){
     
     let tempSlice0
     if (props.page){
-        tempSlice0 = moods.slice(0,5)
+        tempSlice0 = moods.reverse().slice(0,5)
     }else{
-        tempSlice0 = moods
+        tempSlice0 = moods.reverse()
     }
 
     let tempSlice
@@ -58,9 +59,7 @@ export default function MoodList(props){
                 <Link to="/journal"><img className="w-15" src={Arrow}/></Link>
             </header>}
 
-            {tempSlice == 0 && !props.page && <div className="py-100 px-200">
-                    <h1>No Moods Entered</h1>
-                </div>}
+            {tempSlice == 0 && !props.page && <div className="px-100"><img src={Empty}/></div>}
 
             {tempSlice.map(mood => {
                 let emo_src
