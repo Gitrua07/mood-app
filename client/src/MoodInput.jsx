@@ -4,7 +4,7 @@ import Happy from './assets/happy-emoji.png'
 import Sad from './assets/sad-emoji.png'
 import Angry from './assets/angry-emoji.png'
 
-export default function MoodInput() {
+export default function MoodInput({onSubmitted}) {
     const [selectedMood, setSelectedMood] = useState(null)
 
     const date = new Date()
@@ -38,6 +38,7 @@ export default function MoodInput() {
             setEntry("")
             setIntensity(0)
             setSelectedMood(null)
+            onSubmitted()
         }catch(err){
             console.log(err)
         }
@@ -84,7 +85,7 @@ export default function MoodInput() {
         
                 </section>
         <section className="flex justify-between px-10 pt-30 pb-8">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 max-w-100">
                 <h1 className="pb-5">{formattedDate}</h1>
                 <textarea className="w-200 h-80 max-w-200 rounded-lg p-5 outline-3 outline-black" placeholder="Write your journal entry..."
                 value={entry} onChange={e => setEntry(e.target.value)}/>

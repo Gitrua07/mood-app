@@ -11,37 +11,24 @@ import { ChartNoAxesColumnDecreasing } from 'lucide-react'
 import Empty from './assets/sunrise.png'
 
 export default function MoodList(props){
-    const [moods, setMoods] = useState([])
-    if (props.date){
-        
-    }
 
-    useEffect(()=>{
-        async function getMood(){
-            const response = await fetch('http://localhost:8000/api/moods')
-            const data = await response.json()
-            setMoods(data.moods)
-        }
-
-        getMood()
-    },[])
-    
     let tempSlice0
     if (props.page){
-        tempSlice0 = moods.reverse().slice(0,5)
+        tempSlice0 = props.moods.reverse().slice(0,5)
     }else{
-        tempSlice0 = moods.reverse()
+        tempSlice0 = props.moods.reverse()
     }
 
     let tempSlice
     if (props.date){
         try{
             const dateRange = WeeklyFilter(props.date)
-            console.log("PROPS=", props.date)
             tempSlice = tempSlice0.filter(val =>{
                 console.log("DATE: ", val.date, dateRange.weekStart, dateRange.weekEnd)
                 return moodWeekFilter(val.date, dateRange.weekStart, dateRange.weekEnd)
             })
+
+            console.log("TEMPSLICE ", tempSlice)
         }catch(err){
             console.log("ERROR= ", err)
         }

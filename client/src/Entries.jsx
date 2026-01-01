@@ -3,9 +3,9 @@ import ReturnBar from './ReturnBar'
 
 export default function Entries(){
     return(
-        <section className="bg-neutral-200 text-black flex flex-col">
+        <section className="bg-neutral-200 text-black flex flex-col pb-30">
             <ReturnBar />
-            <FilterDate />
+            <FilterDate/>
         </section>
     )
 }
