@@ -7,7 +7,13 @@ import Angry from './assets/angry-emoji.png'
 export default function MoodInput() {
     const [selectedMood, setSelectedMood] = useState(null)
 
-    const date = new Date().toLocaleDateString()
+    const date = new Date()
+    const formattedDate = date.toLocaleDateString("en-US",{
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+    })
+
     const [entry, setEntry] = useState("")
     const [intensity, setIntensity] = useState(0)
     const id = Date.now()
@@ -77,17 +83,17 @@ export default function MoodInput() {
                     </article>
         
                 </section>
-        <section className="flex justify-between py-8 px-10">
+        <section className="flex justify-between px-10 pt-30 pb-8">
             <div className="flex flex-col gap-5">
-                <h1>{date}</h1>
-                <textarea className="w-200 h-80" placeholder="Write your journal entry..."
+                <h1 className="pb-5">{formattedDate}</h1>
+                <textarea className="w-200 h-80 max-w-200 rounded-lg p-5 outline-3 outline-black" placeholder="Write your journal entry..."
                 value={entry} onChange={e => setEntry(e.target.value)}/>
-                <div>
-                    <button className="!rounded-full text-white !bg-purple-900 h-15 w-25 text-xl" type="button" onClick={submitData}>Submit</button>
+                <div className="pt-4">
+                    <button className="!rounded-full text-white !bg-blue-600 h-15 w-25 text-xl hover:!bg-blue-900" type="button" onClick={submitData}>Submit</button>
                 </div>
             </div>
             <div>
-                <p><span>Intensity</span> {intensity}</p>
+                <p className="font-bold italic"><span>Intensity:</span> {intensity}</p>
                 <input type="range" min="0" max="10" value={intensity} onChange={e => setIntensity(Number(e.target.value))}/>
             </div>
         </section>

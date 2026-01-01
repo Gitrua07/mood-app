@@ -5,8 +5,10 @@ import {Link} from 'react-router-dom'
 export default function ReturnBar(){
     return(
         <section className="py-10 px-10">
-            <Link to="/">
-                <img className="w-10" src={Back} alt="Back arrow"/>
+            <Link className="" to="/">
+            <div className="max-w-15 hover:bg-neutral-300 hover:rounded-xl">
+                <img className="py-2 px-2" src={Back} alt="Back arrow"/>
+            </div>    
             </Link>
         </section>
     )

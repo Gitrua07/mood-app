@@ -56,7 +56,7 @@ export default function MoodList(props){
         <>
             {props.page && <header className="flex text-black items-center px-10 py-5 gap-5">
                 <h1>Mood Entries</h1>
-                <Link to="/journal"><img className="w-15" src={Arrow}/></Link>
+                <Link className="hover:bg-neutral-300 rounded-xl" to="/journal"><img className="w-15" src={Arrow}/></Link>
             </header>}
 
             {tempSlice == 0 && !props.page && <div className="px-100"><img src={Empty}/></div>}
