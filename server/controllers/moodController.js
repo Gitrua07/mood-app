@@ -4,20 +4,18 @@ import { readData } from '../data/fileHelper.js'
 export const moodController = async(req, res) =>{
     try{
         const data = await readData('moods.json')
-        let filteredData = data
+        let filteredData = data.moods
 
        if(req.query.date != null){
-        filteredData = filteredData.moods.filter((value)=>{
+        filteredData = filteredData.filter((value)=>{
             return value.date.includes(req.query.date)
 
         })
        }
 
-        res.json(filteredData)
-
         res.status(200).json({
             success:true,
-            sent: filteredData
+            moods: filteredData
         })
 
     }catch(err){
