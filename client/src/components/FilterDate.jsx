@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {getMoods} from '../api/getMoods'
+import getMoods from '../api/getMoods'
 import MoodList from '../components/MoodList'
 
 
