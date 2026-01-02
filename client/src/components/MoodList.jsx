@@ -9,11 +9,13 @@ import Empty from '../assets/sunrise.png'
 
 export default function MoodList(props){
 
+    const moods = props.moods
+
     let tempSlice0
     if (props.page){
-        tempSlice0 = props.moods.reverse().slice(0,5)
+        tempSlice0 = [...moods].reverse().slice(0,5)
     }else{
-        tempSlice0 = props.moods.reverse()
+        tempSlice0 = [...moods].reverse()
     }
 
     let tempSlice
