@@ -1,4 +1,4 @@
-export function weeklyFilter(date){
+export function weekFilter(date){
     const week_date = new Date(date)
     const today_date = week_date.getDate()
 

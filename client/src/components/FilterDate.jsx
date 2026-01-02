@@ -9,7 +9,6 @@ export default function FilterDate(){
         const getMood = async() => {
             const response = await fetch('http://localhost:8000/api/moods')
             const data = await response.json()
-            console.log("GET /api/moods returned:", data)
             setMoods(data.moods)
         }
     
@@ -18,12 +17,13 @@ export default function FilterDate(){
             },[])
 
     return(
-            <sections className="flex flex-col gap-10 px-10 px-10 pt-8 pb-20 px-40 max-w-315 justify-center">
-            <h1 className="font-semibold">Upcoming</h1>
-            <div>
+            <sections>
+            <h1 className="font-semibold py-10">Upcoming</h1>
+            <div className="pb-10">
                 <input className="bg-neutral-50 font-semibold" type="date" value={selectedDate} onChange={e=>setSelectedDate(e.target.value)}/>
             </div>
             <MoodList moods={moods} date={selectedDate}/>
             </sections>  
     )
 }
+//gap-10 px-10 px-10 pt-8 pb-20 px-40 max-w-315 justify-center

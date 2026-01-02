@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
 import MoodCard from './MoodCard'
 import Happy from '../assets/happy-emoji.png'
 import Sad from '../assets/sad-emoji.png'
 import Angry from '../assets/angry-emoji.png'
 import Arrow from '../assets/arrow.png'
 import { Link } from 'react-router-dom'
-import {moodWeekFilter} from '../utils/weekFilter'
+import {weekFilter, moodWeekFilter} from '../utils/weekFilter'
 import Empty from '../assets/sunrise.png'
 
 export default function MoodList(props){
@@ -20,9 +19,8 @@ export default function MoodList(props){
     let tempSlice
     if (props.date){
         try{
-            const dateRange = WeeklyFilter(props.date)
+            const dateRange = weekFilter(props.date)
             tempSlice = tempSlice0.filter(val =>{
-                console.log("DATE: ", val.date, dateRange.weekStart, dateRange.weekEnd)
                 return moodWeekFilter(val.date, dateRange.weekStart, dateRange.weekEnd)
             })
 
@@ -39,13 +37,17 @@ export default function MoodList(props){
 
     return(
         <>
-            {props.page && <header className="flex text-black items-center px-10 py-5 gap-5">
+            {props.page && <header className="flex text-black items-center py-5 gap-5">
                 <h1>Mood Entries</h1>
-                <Link className="hover:bg-neutral-300 rounded-xl" to="/journal"><img className="w-15" src={Arrow}/></Link>
+                <Link className="hover:bg-neutral-300 rounded-xl min-w-10" to="/journal"><img className="w-15" src={Arrow}/></Link>
             </header>}
 
-            {tempSlice == 0 && !props.page && <div className="px-100"><img src={Empty}/></div>}
+            {tempSlice == 0 && !props.page && <div className="flex flex-col items-center py-10">
+                <img src={Empty}/>
+                <h2>Entries have yet to be written!</h2>
+                </div>}
 
+            <div className="flex flex-col gap-20">
             {tempSlice.map(mood => {
                 let emo_src
                 if(mood.mood=="Happy"){
@@ -57,6 +59,9 @@ export default function MoodList(props){
                 }
                 return <MoodCard mood={mood.mood} img={emo_src} date={mood.date} min={mood.createdAt} entry={mood.entries}/>
             })}
+            </div>
+
+            
         </>
     )
 }

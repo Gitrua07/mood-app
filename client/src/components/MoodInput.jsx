@@ -14,7 +14,7 @@ export default function MoodInput({onSubmitted}) {
     })
 
     const [entry, setEntry] = useState("")
-    const [intensity, setIntensity] = useState(0)
+    const [intensity, setIntensity] = useState(1)
     const id = Date.now()
 
     const submitData = async() => {
@@ -49,8 +49,9 @@ export default function MoodInput({onSubmitted}) {
         <section>
                     <p className="text-shadow-lg pb-10 pt-35 py-10 font-semibold text-3xl text-center italic">How are you doing today?</p>
                     <h1 className="px-9 py-10">Mood Chart</h1>
-                    <article className="flex px-20 py-8">
-                    <div className="flex flex-col items-center gap-5">
+                    <article className="pt-20">
+                    <div className="flex">
+                    <div className="flex flex-col items-center gap-5 flex-1 min-w-0">
                         <button 
                         onClick={()=>setSelectedMood('Happy')} 
                         className={
@@ -60,7 +61,7 @@ export default function MoodInput({onSubmitted}) {
                         </button>
                         <p className="font-bold text-2xl">Happy</p>
                     </div>
-                    <div className="flex flex-col items-center gap-5">
+                    <div className="flex flex-col items-center gap-5 flex-1 min-w-0">
                         <button 
                         onClick={()=>setSelectedMood('Sad')} 
                         className={
@@ -70,7 +71,7 @@ export default function MoodInput({onSubmitted}) {
                         </button>
                         <p className="font-bold text-2xl">Sad</p>
                     </div>
-                    <div className="flex flex-col items-center gap-5">
+                    <div className="flex flex-col items-center gap-5 flex-1 min-w-0">
                         <button 
                             onClick={()=>setSelectedMood('Angry')} 
                             className={
@@ -80,22 +81,28 @@ export default function MoodInput({onSubmitted}) {
                         </button>
                         <p className="font-bold text-2xl">Angry</p>
                     </div>
+                    </div>
+                    
                     </article>
         
                 </section>
-        <section className="flex justify-between px-10 pt-30 pb-8">
-            <div className="flex flex-col gap-5 max-w-100">
+        <section>
+            <div className="flex flex-col gap-5 pt-30 pb-20">
+                <div className="flex justify-between">
                 <h1 className="pb-5">{formattedDate}</h1>
-                <textarea className="w-200 h-80 max-w-200 rounded-lg p-5 outline-3 outline-black" placeholder="Write your journal entry..."
+                <div>
+                <p className="font-bold italic"><span>Intensity:</span> {intensity}</p>
+                <input type="range" min="1" max="10" value={intensity} onChange={e => setIntensity(Number(e.target.value))}/>
+                </div>
+                </div>
+                
+                <textarea className="min-h-100 rounded-lg p-5 outline-3 outline-black" placeholder="Write your journal entry..."
                 value={entry} onChange={e => setEntry(e.target.value)}/>
                 <div className="pt-4">
                     <button className="!rounded-full text-white !bg-blue-600 h-15 w-25 text-xl hover:!bg-blue-900" type="button" onClick={submitData}>Submit</button>
                 </div>
             </div>
-            <div>
-                <p className="font-bold italic"><span>Intensity:</span> {intensity}</p>
-                <input type="range" min="0" max="10" value={intensity} onChange={e => setIntensity(Number(e.target.value))}/>
-            </div>
+            
         </section>
         </>
         
