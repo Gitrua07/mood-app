@@ -8,5 +8,4 @@ server/dist/
 Thumbs.db
 .vscode/
 .idea/
-server/data/*.json
 *.log
