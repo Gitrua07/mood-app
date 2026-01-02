@@ -2,6 +2,7 @@ import {useState} from "react"
 import Happy from '../assets/happy-emoji.png'
 import Sad from '../assets/sad-emoji.png'
 import Angry from '../assets/angry-emoji.png'
+import {API_URL} from '../config'
 
 export default function MoodInput({onSubmitted}) {
     const [selectedMood, setSelectedMood] = useState(null)
@@ -26,7 +27,7 @@ export default function MoodInput({onSubmitted}) {
         } 
 
         try{
-            const data = await fetch('http://localhost:8000/api/moods', {
+            const data = await fetch(`${API_URL}/api/moods`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify(moodData)

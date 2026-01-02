@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {getMoods} from '../api/getMoods'
 import MoodList from '../components/MoodList'
 
 
@@ -7,8 +8,7 @@ export default function FilterDate(){
     const [moods, setMoods] = useState([])
         
         const getMood = async() => {
-            const response = await fetch('http://localhost:8000/api/moods')
-            const data = await response.json()
+            const data = await getMoods()
             setMoods(data.moods)
         }
     
@@ -26,4 +26,3 @@ export default function FilterDate(){
             </sections>  
     )
 }
-//gap-10 px-10 px-10 pt-8 pb-20 px-40 max-w-315 justify-center
