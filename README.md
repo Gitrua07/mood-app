@@ -7,7 +7,7 @@ A full-stack web application which tracks the user's daily moods.
 * Backend: Node.js, Express
 * Storage: JSON files
 
-## Features (Planned)
+## Features
 * Daily mood logging with intensity scale
 * Daily journal entry paired with mood log
 * Data persistence
@@ -38,9 +38,6 @@ npm run dev
 cd client
 npm run dev
 ```
-
-## Project Status
-In development
 
 ## Image Credits
 * plus button - <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by dmitri13 - Flaticon</a>

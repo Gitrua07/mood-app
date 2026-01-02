@@ -1,5 +1,6 @@
 import { readData, writeData } from "../data/fileHelper.js"
 
+//TODO: Extra endpoint path that can be extended later on. Currently unused
 export const journalPostCont = async(req, res) => {
     try{
         const data = await readData('journals.json')
@@ -20,9 +21,7 @@ export const journalPostCont = async(req, res) => {
         })
 
     }catch(err){
-        console.error('Error saving journal:', err)  // ← Add this line!
-    console.error('Error message:', err.message) // ← And this one!
-    res.status(500).json({
+        res.status(500).json({
         success: false,
         error: "Failed to send data"
     })

@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react'
-import MoodList from './MoodList'
+import MoodList from '../components/MoodList'
 
 
 export default function FilterDate(){
     const [selectedDate, setSelectedDate] = useState('')
-     const [moods, setMoods] = useState([])
+    const [moods, setMoods] = useState([])
         
         const getMood = async() => {
             const response = await fetch('http://localhost:8000/api/moods')

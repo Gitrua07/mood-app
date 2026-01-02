@@ -1,6 +1,6 @@
-import {journals} from '../data/journals.js'
 import { readData } from '../data/fileHelper.js'
 
+//TODO: Extra endpoint path that can be extended later on. Currently unused
 export const journalController = async(req, res) =>{
     try{
         const data = await readData('journals.json')

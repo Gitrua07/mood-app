@@ -1,16 +1,13 @@
-import MoodCard from './MoodCard'
-import MoodInput from './MoodInput'
-import MoodSelect from './MoodSelect'
-import MoodList from './MoodList'
+import MoodInput from '../components/MoodInput'
+import MoodList from '../components/MoodList'
 import {useState, useEffect} from 'react'
+import getMoods from '../api/getMoods'
 
 export default function Home(){
     const [moods, setMoods] = useState([])
     
     const getMood = async() => {
-        const response = await fetch('http://localhost:8000/api/moods')
-        const data = await response.json()
-        console.log("GET /api/moods returned:", data)
+        const data = await getMoods()
         setMoods(data.moods)
     }
 

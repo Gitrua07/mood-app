@@ -1,6 +1,6 @@
-import AddButton from './assets/add.png'
+import AddButton from '../assets/add.png'
+
 export default function MoodCard(props){
-    console.log(props)
     return (
         <article className="px-10 py-8 font-sans flex gap-10 h-80 w-screen">
             <img className="items-center h-9/10"src={props.img} alt="Emotion that indicates mood."/>

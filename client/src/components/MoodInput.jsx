@@ -1,8 +1,7 @@
 import {useState} from "react"
-
-import Happy from './assets/happy-emoji.png'
-import Sad from './assets/sad-emoji.png'
-import Angry from './assets/angry-emoji.png'
+import Happy from '../assets/happy-emoji.png'
+import Sad from '../assets/sad-emoji.png'
+import Angry from '../assets/angry-emoji.png'
 
 export default function MoodInput({onSubmitted}) {
     const [selectedMood, setSelectedMood] = useState(null)

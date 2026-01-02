@@ -1,5 +1,4 @@
-import { Section } from 'lucide-react'
-import Back from './assets/back.png'
+import Back from '../assets/back.png'
 import {Link} from 'react-router-dom'
 
 export default function ReturnBar(){

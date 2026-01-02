@@ -1,6 +1,6 @@
-//import {moods} from '../data/data.js'
 import { readData } from '../data/fileHelper.js'
 
+//Retrieves mood data for displaying on front-end
 export const moodController = async(req, res) =>{
     try{
         const data = await readData('moods.json')
@@ -21,7 +21,6 @@ export const moodController = async(req, res) =>{
         })
 
     }catch(err){
-        console.log(err)
         res.status(500).json(
             {
                 success: false,

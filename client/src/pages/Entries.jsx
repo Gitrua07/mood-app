@@ -1,5 +1,5 @@
-import FilterDate from './FilterDate'
-import ReturnBar from './ReturnBar'
+import FilterDate from '../components/FilterDate'
+import ReturnBar from '../components/ReturnBar'
 
 export default function Entries(){
     return(
