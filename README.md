@@ -2,6 +2,8 @@
 
 A full-stack web application which tracks the user's daily moods.
 
+**Created: Jan 2026** 
+
 ## Tech stack
 * Frontend: React, Tailwind CSS
 * Backend: Node.js, Express
@@ -49,4 +51,5 @@ npm run dev
     * Angry: <a href="https://openmoji.org/library/emoji-1F63E/" title="pouting cat">pouting cat created by Emily Jäger - OpenMoji</a>
     * Happy: <a href="https://openmoji.org/library/emoji-1F638/" title="grinning cat with smiling eyes">grinning cat with smiling eyes created by Emily Jäger - OpenMoji</a>
     * Sad: <a href="https://openmoji.org/library/emoji-1F63F/" title="crying cat">crying cat created by Emily Jäger - OpenMoji</a>
+
 * Sunshine Icon - <a href="https://www.flaticon.com/free-icons/opps" title="opps icons">Opps icons created by andinur - Flaticon</a>
