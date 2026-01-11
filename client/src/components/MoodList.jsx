@@ -59,7 +59,7 @@ export default function MoodList(props){
                 }else{
                     emo_src = Angry
                 }
-                return <MoodCard mood={mood.mood} img={emo_src} date={mood.date} min={mood.createdAt} entry={mood.entries}/>
+                return <MoodCard mood={mood.mood} img={emo_src} date={mood.date} min={mood.createdAt} intensity={mood.intensity} entry={mood.entries}/>
             })}
             </div>
 

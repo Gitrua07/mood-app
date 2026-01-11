@@ -7,7 +7,7 @@ import News from './assets/news.png'
 function App() {
   return (
     <BrowserRouter>
-      <nav className="flex gap-5 px-9 py-4 text-center bg-neutral-300 justify-start items-center">
+      <nav className="flex gap-5 px-9 py-4 text-center bg-neutral-300 justify-end items-center">
           <Link to="/">
             <div className="p-3 bg-neutral-50 hover:outline-neutral-50 hover:outline-3 hover:outline-offset-2 rounded-xl">
               <img className="w-10 bg-neutral-50" src={HomePic} alt="home icon"/>
