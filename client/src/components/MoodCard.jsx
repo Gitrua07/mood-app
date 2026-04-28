@@ -21,7 +21,7 @@ export default function MoodCard(props) {
                     </div>
                     <div className="flex items-center gap-3">
                         <button onClick={() => setIsOpen(true)}><img className="max-w-10 min-w-10 items-center" src={AddButton} alt="A plus button" /></button>
-                        <p>{dateFormat} • {props.min} min</p>
+                        <p>Written: {dateFormat}</p>
                     </div>
 
                     {isOpen && <article className="flex inset-0 fixed bg-white z-50">

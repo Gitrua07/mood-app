@@ -23,22 +23,29 @@ export default function MoodInput({onSubmitted}) {
             "id": id,
             "mood": selectedMood,
             "entries": entry,
-            "intensity": intensity
+            "intensity": intensity,
         } 
 
         try{
-            const data = await fetch(`${API_URL}/api/moods`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json'},
-                body: JSON.stringify(moodData)
-            })
 
-            console.log("JSON.stringify... =",JSON.stringify(moodData) )
+            if(moodData.mood!= null){
+                const data = await fetch(`${API_URL}/api/moods`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json'},
+                    body: JSON.stringify(moodData)
+                })
+    
+                console.log("JSON.stringify... =",JSON.stringify(moodData) )
+                
+                if (data.ok){
+                    setEntry("")
+                    setIntensity(0)
+                    setSelectedMood(null)
+                    onSubmitted()
+                }
+                
+            }
 
-            setEntry("")
-            setIntensity(0)
-            setSelectedMood(null)
-            onSubmitted()
         }catch(err){
             console.log(err)
         }
