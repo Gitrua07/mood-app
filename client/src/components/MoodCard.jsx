@@ -1,6 +1,5 @@
 import AddButton from '../assets/add.png'
 import { useState } from 'react'
-import SelectionPage from './SelectionPage'
 
 export default function MoodCard(props) {
     const [isOpen, setIsOpen] = useState(false)
@@ -24,17 +23,17 @@ export default function MoodCard(props) {
                         <p>Written: {dateFormat}</p>
                     </div>
 
-                    {isOpen && <article className="flex inset-0 fixed bg-white z-50">
-                        <div className="w-full h-full">
+                    {isOpen && <article className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+                        <div className="w-[420px] max-w-[90vw] rounded-xl bg-white p-6">
                             <div className="flex justify-end">
                                 <button onClick={() => setIsOpen(false)}>X</button>
                             </div>
                             <div className="flex flex-col items-center justify-center">
-                                <p>{dateFormat}</p>
-                                <img src={props.img} alt="Emotion that indicates mood." />
-                                <p>{props.mood}</p>
-                                <p>Intensity: {props.intensity}</p>
-                                <p>{props.entry}</p>
+                                <p className='font-bold'>{dateFormat}</p>
+                                <img src={props.img} alt="Emotion that indicates mood." className='w-80' />
+                                <p>You're feeling... {props.mood}</p>
+                                <p>Mood Intensity: {props.intensity}</p>
+                                <p><br/>Journal Entry:<br/>{props.entry}</p>
                             </div>
                         </div>
                     </article>}
