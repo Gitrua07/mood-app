@@ -39,7 +39,7 @@ export default function MoodInput({onSubmitted}) {
                 
                 if (data.ok){
                     setEntry("")
-                    setIntensity(0)
+                    setIntensity(1)
                     setSelectedMood(null)
                     onSubmitted()
                 }
