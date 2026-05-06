@@ -16,7 +16,7 @@ export default function MoodInput({onSubmitted}) {
 
     const [entry, setEntry] = useState("")
     const [intensity, setIntensity] = useState(1)
-    const id = Date.now()
+    const id = Date.now() + Math.random()
 
     const submitData = async() => {
         const moodData = {
@@ -57,8 +57,8 @@ export default function MoodInput({onSubmitted}) {
         <section>
                     <p className="text-shadow-lg pb-10 pt-35 py-10 font-semibold text-3xl text-center italic">How are you doing today?</p>
                     <h1 className="px-9 py-10">Mood Chart</h1>
-                    <article className="pt-20">
-                    <div className="flex">
+                    <article className="pt-10">
+                    <div className="flex gap-5">
                     <div className="flex flex-col items-center gap-5 flex-1 min-w-0">
                         <button 
                         onClick={()=>setSelectedMood('Happy')} 

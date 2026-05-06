@@ -17,3 +17,7 @@ export const writeData = async(file, input) => {
     const moodPath = path.join(__dirname, file)
     const data = await fs.writeFile(moodPath, JSON.stringify(input, null, 2))
 }
+
+// export const deleteData = async(file) => {
+
+// }

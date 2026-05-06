@@ -54,3 +54,5 @@ npm run dev
 
 * Sunshine Icon - <a href="https://www.flaticon.com/free-icons/opps" title="opps icons">Opps icons created by andinur - Flaticon</a>
 
+* Trash Icon - <a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by bqlqn - Flaticon</a>
+
