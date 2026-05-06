@@ -1,13 +1,23 @@
 import AddButton from '../assets/add.png'
-import { useState } from 'react'
+import TrashButton from '../assets/trash.png'
+import {useState, useEffect} from 'react'
+import deleteMoods from '../api/deleteMoods'
 
 export default function MoodCard(props) {
     const [isOpen, setIsOpen] = useState(false)
+    const [isDeleted, setIsDeleted] = useState(false)
     const dateFormat = new Date(props.date).toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
         year: 'numeric'
     })
+    
+
+    const deleteMood = async() => {
+        await deleteMoods(props.id)
+        props.onDelete(props.id)
+    }
+    
 
     return (
         <article>
@@ -21,6 +31,7 @@ export default function MoodCard(props) {
                     <div className="flex items-center gap-3">
                         <button onClick={() => setIsOpen(true)}><img className="max-w-10 min-w-10 items-center" src={AddButton} alt="A plus button" /></button>
                         <p>Written: {dateFormat}</p>
+                        <button onClick = {() => deleteMood()}><img className="max-w-10 min-w-10 items-center" alt='trash icon'src={TrashButton}/> Delete</button>
                     </div>
 
                     {isOpen && <article className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">

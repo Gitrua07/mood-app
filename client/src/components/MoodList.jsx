@@ -6,10 +6,20 @@ import Arrow from '../assets/arrow.png'
 import { Link } from 'react-router-dom'
 import {weekFilter, moodWeekFilter} from '../utils/weekFilter'
 import Empty from '../assets/sunrise.png'
+import {useState, useEffect} from 'react'
+import deleteMoods from '../api/deleteMoods'
 
 export default function MoodList(props){
+    const [moods, setMoods] = useState(props.moods ?? [])
 
-    const moods = props.moods
+    useEffect(() => {
+        setMoods(props.moods ?? [])
+    }, [props.moods])
+
+    const deleteMood = (deletedId) => {
+        setMoods( prev => prev.filter(entry => entry.id !== deletedId))
+    }
+
 
     let tempSlice0
     if (props.page){
@@ -59,7 +69,7 @@ export default function MoodList(props){
                 }else{
                     emo_src = Angry
                 }
-                return <MoodCard mood={mood.mood} img={emo_src} date={mood.date} intensity={mood.intensity} entry={mood.entries}/>
+                return <MoodCard id={mood.id} mood={mood.mood} img={emo_src} date={mood.date} intensity={mood.intensity} entry={mood.entries} onDelete={deleteMood}/>
             })}
             </div>
 
